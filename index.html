@@ -19,26 +19,12 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        input[type="text"] {
-            width: 100%;
+        #status {
+            font-size: 18px;
             padding: 10px;
-            margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
+            background-color: #fff;
         }
     </style>
 </head>
@@ -46,20 +32,10 @@
 
 <div class="container">
     <h2>Mein Status</h2>
-    <form id="statusForm">
-        <input type="text" id="statusInput" placeholder="Geben Sie hier Ihren Status ein...">
-        <input type="submit" value="Aktualisieren">
-    </form>
-    <div id="statusOutput"></div>
+    <div id="status">
+        <p>Aktueller Status: Online</p>
+    </div>
 </div>
-
-<script>
-    document.getElementById("statusForm").addEventListener("submit", function(event) {
-        event.preventDefault();
-        var status = document.getElementById("statusInput").value;
-        document.getElementById("statusOutput").innerHTML = "<p>Aktueller Status: " + status + "</p>";
-    });
-</script>
 
 </body>
 </html>
