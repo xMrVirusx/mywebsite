@@ -28,13 +28,13 @@
             margin-bottom: 20px;
         }
         input[type="text"] {
-            width: 100%;
+            width: calc(100% - 24px); /* Berücksichtigt die 20px Padding + 2px Rand */
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
             font-size: 16px;
+            box-sizing: border-box;
         }
         input[type="submit"] {
             background-color: #007bff;
@@ -61,7 +61,7 @@
 <script>
     function sendEmail() {
         var userInput = document.getElementById("userInput").value;
-        var emailLink = "mailto:x.mrvirus.x96@gmail.com?subject=Benutzeranfrage&body=" + userInput;
+        var emailLink = "mailto:x.mrvirus.x96@gmail.com?subject=Benutzeranfrage&body=" + encodeURIComponent(userInput);
         window.location.href = emailLink;
     }
 </script>
