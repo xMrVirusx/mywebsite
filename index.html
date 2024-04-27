@@ -25,17 +25,46 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             background-color: #fff;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Mein Status</h2>
-    <div id="status">
-        <p>Aktueller Status: Online</p>
-    </div>
+    <h2>Was willst du?</h2>
+    <input type="text" id="userInput" placeholder="Gib hier deinen Text ein...">
+    <input type="submit" value="Senden" onclick="sendEmail()">
 </div>
+
+<script>
+    function sendEmail() {
+        var userInput = document.getElementById("userInput").value;
+        var emailLink = "mailto:x.mrvirus.x96@gmail.com?subject=Benutzeranfrage&body=" + userInput;
+        window.location.href = emailLink;
+    }
+</script>
 
 </body>
 </html>
