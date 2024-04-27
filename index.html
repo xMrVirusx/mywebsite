@@ -46,22 +46,19 @@
 
 <div class="container">
     <h2>Mein Status</h2>
-    <div id="status">
-        <p>Aktueller Status: Arbeitend</p>
-    </div>
+    <p>Aktueller Status: Arbeitend</p>
     <input type="text" id="userInput" placeholder="Gib hier deinen Text ein...">
     <input type="submit" value="Senden" onclick="sendEmail()">
 </div>
 
 <script>
     function sendEmail() {
-        var status = document.getElementById("status").innerHTML;
+        var status = "Aktueller Status: Arbeitend";
         var userInput = document.getElementById("userInput").value;
-        var emailLink = "mailto:x.mrvirus.x96@gmail.com?body=" + encodeURIComponent(status + "\n\n" + userInput);
-        window.location.href = emailLink;
+        var emailBody = encodeURIComponent(status + "\n\n" + userInput);
+        window.location.href = "mailto:x.mrvirus.x96@gmail.com?body=" + emailBody;
     }
 </script>
 
 </body>
 </html>
-
