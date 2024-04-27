@@ -3,62 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein Status</title>
+    <title>Meine Website</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        input[type="text"] {
-            width: calc(100% - 24px); /* Berücksichtigt die 20px Padding + 2px Rand */
+        /* Stil für die Boxen */
+        .box {
+            border: 1px solid #ccc;
             padding: 10px;
             margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>Mein Status</h2>
-    <p>Aktueller Status: Arbeitend</p>
-    <input type="text" id="userInput" placeholder="Gib hier deinen Text ein...">
-    <input type="submit" value="Senden" onclick="sendEmail()">
+<!-- Status-Anzeige -->
+<div class="box">
+    <h2>Mein Status:</h2>
+    <p>Online</p>
 </div>
 
-<script>
-    function sendEmail() {
-        var status = "Aktueller Status: Arbeitend";
-        var userInput = document.getElementById("userInput").value;
-        var emailBody = encodeURIComponent(status + "\n\n" + userInput);
-        window.location.href = "mailto:x.mrvirus.x96@gmail.com?body=" + emailBody;
-    }
-</script>
+<!-- Eingabefeld für Nachrichten -->
+<div class="box">
+    <h2>Was willst du?</h2>
+    <form action="mailto:x.mrvirus.x96@gmail.com" method="post" enctype="text/plain">
+        <label for="nachricht">Nachricht:</label><br>
+        <textarea id="nachricht" name="Nachricht" rows="4" cols="50"></textarea><br><br>
+        <input type="submit" value="Senden">
+    </form>
+</div>
 
 </body>
 </html>
