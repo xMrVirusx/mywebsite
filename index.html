@@ -54,14 +54,16 @@
 
 <div class="container">
     <h2>Was willst du?</h2>
+    <input type="text" id="subjectInput" placeholder="Betreff...">
     <input type="text" id="userInput" placeholder="Gib hier deinen Text ein...">
     <input type="submit" value="Senden" onclick="sendEmail()">
 </div>
 
 <script>
     function sendEmail() {
+        var subject = document.getElementById("subjectInput").value;
         var userInput = document.getElementById("userInput").value;
-        var emailLink = "mailto:x.mrvirus.x96@gmail.com?subject=Benutzeranfrage&body=" + encodeURIComponent(userInput);
+        var emailLink = "mailto:x.mrvirus.x96@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(userInput);
         window.location.href = emailLink;
     }
 </script>
