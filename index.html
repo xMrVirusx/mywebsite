@@ -19,14 +19,6 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        #status {
-            font-size: 18px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #fff;
-            margin-bottom: 20px;
-        }
         input[type="text"] {
             width: calc(100% - 24px); /* Berücksichtigt die 20px Padding + 2px Rand */
             padding: 10px;
@@ -54,19 +46,12 @@
 
 <div class="container">
     <h2>Was willst du?</h2>
-    <input type="text" id="subjectInput" placeholder="Betreff...">
-    <input type="text" id="userInput" placeholder="Gib hier deinen Text ein...">
-    <input type="submit" value="Senden" onclick="sendEmail()">
+    <form id="emailForm" action="mailto:x.mrvirus.x96@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="Betreff" placeholder="Betreff...">
+        <input type="text" name="Text" placeholder="Gib hier deinen Text ein...">
+        <input type="submit" value="Senden">
+    </form>
 </div>
-
-<script>
-    function sendEmail() {
-        var subject = document.getElementById("subjectInput").value;
-        var userInput = document.getElementById("userInput").value;
-        var emailLink = "mailto:x.mrvirus.x96@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(userInput);
-        window.location.href = emailLink;
-    }
-</script>
 
 </body>
 </html>
